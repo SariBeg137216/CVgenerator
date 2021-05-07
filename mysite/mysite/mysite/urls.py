@@ -15,11 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from pdf import views
+from scrape import views
 
 urlpatterns = [
-    path('', views.accept, name='accept'),
-    path('<int:id>/', views.user_profile, name='user_profile'),
-    path('profiles/', views.profile_list, name='profile_list'),
     path('admin/', admin.site.urls),
+    path('', views.crawler, name='crawler'),
+    path('delete/', views.clear, name='clear')
 ]
